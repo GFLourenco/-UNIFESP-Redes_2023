@@ -27,7 +27,7 @@ public class client {
               
                 public void run() {
                     while(true){
-                        System.out.println("Cliente escreva a mensagem: ");
+                        System.out.println("Cliente, escreva a mensagem: ");
                         msg = sc.nextLine();
                         out.println(msg);
                         out.flush();
