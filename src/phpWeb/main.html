@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Atualização de Conteúdo com JavaScript</title>
+</head>
+<body>
+    <h1>Conteúdo Dinâmico</h1>
+    <p id="conteudo">Clique no botão para atualizar o horário.</p>
+    <button id="atualizarBotao">Atualizar Horário</button>
+
+    <script>
+        function atualizarConteudo() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                // --> State 4 = Se solicitação foi concluída | State 200 = Se solicitação foi bem sucedida
+                if (this.readyState === 4 && this.status === 200) { 
+                    document.getElementById("conteudo").innerHTML = this.response;
+                }
+            };
+            xhttp.open("GET", "main.php", true);
+            xhttp.send();
+        }
+
+        document.getElementById("atualizarBotao").addEventListener("click", function() {
+            atualizarConteudo();
+        });
+        atualizarConteudo();
+    </script>
+</body>
+</html>
