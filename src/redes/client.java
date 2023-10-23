@@ -19,7 +19,7 @@ public class client {
         try {
             System.out.println("IP : ");
         	ipAddress = sc.nextLine();
-            clientSocket = new Socket(ipAddress,3000);
+            clientSocket = new Socket(ipAddress, 3000);
             out = new PrintWriter(clientSocket.getOutputStream());
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             Thread sender = new Thread(new Runnable() {
